@@ -6,7 +6,7 @@ JSON library for VFP.
 
 ###Functions:
 
-*json_encode(xExpr)*
+**json_encode(xExpr)**
 
 Returns a string, that is the json of any expression passed.
 
