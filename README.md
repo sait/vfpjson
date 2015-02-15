@@ -4,9 +4,10 @@ JSON library for VFP.
 
 
 
-##Functions:
+###Functions:
 
 *json_encode(xExpr)*
+
 Returns a string, that is the json of any expression passed.
 
 *json_decode(cJson)*
@@ -26,8 +27,8 @@ For large table should change to create the string record by record.
 
 
 
-##Examples
-´´´
+###Examples
+```
 set procedure json additive
 
 oPerson = json_decode(' { "name":"Ignacio" , "lastname":"Gutierrez", "age":33 } ')
@@ -52,4 +53,4 @@ cJson =  json_encode(oSmtp)
 
 ? json_encode(_screen)
 
-´´´
+```
