@@ -1,33 +1,24 @@
 #VFPJSON
-it's a JSON Library in VFP
-
-Librería para el manejo de JSON en VFP
-
-Thanks Google for the code in Json Dart
-
-Gracias a Google por el codigo de Json de Dart
-
-http://code.google.com/p/dart/source/browse/trunk/dart/lib/json/json.dart
-
-Warning: Too slow to used with large data
+JSON library for VFP.
+*Warning* Too slow to used with large data
 
 
 
-Functions:
+##Functions:
 
-json_encode(xExpr)
+*json_encode(xExpr)*
 Returns a string, that is the json of any expression passed.
 
-json_decode(cJson)
+*json_decode(cJson)*
 Returns an object, from the string passed.
 
-json_getErrorMsg()
+*json_getErrorMsg()*
 Returns empty if no error found in last decode.
 
-recordToJson()
+*recordToJson()*
 Returns the json representation for current record.
 
-tableToJson()
+*tableToJson()*
 Returns the json representation for current table
 Warning need to be changed for large table, because use dimension aInfo[reccount()]
 For large table should change to create the string record by record.
@@ -35,7 +26,8 @@ For large table should change to create the string record by record.
 
 
 
-Examples:
+##Examples
+´´´
 set procedure json additive
 
 oPerson = json_decode(' { "name":"Ignacio" , "lastname":"Gutierrez", "age":33 } ')
@@ -60,4 +52,4 @@ cJson =  json_encode(oSmtp)
 
 ? json_encode(_screen)
 
-
+´´´
