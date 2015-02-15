@@ -3,28 +3,27 @@ JSON library for VFP.
 *Warning* Too slow to used with large data
 
 
-
-###Functions:
-
 **json_encode(xExpr)**
 
 Returns a string, that is the json of any expression passed.
 
-*json_decode(cJson)*
+**json_decode(cJson)**
+
 Returns an object, from the string passed.
 
-*json_getErrorMsg()*
+**json_getErrorMsg()**
+
 Returns empty if no error found in last decode.
 
-*recordToJson()*
+**recordToJson()**
+
 Returns the json representation for current record.
 
-*tableToJson()*
+**tableToJson()**
+
 Returns the json representation for current table
 Warning need to be changed for large table, because use dimension aInfo[reccount()]
 For large table should change to create the string record by record.
-
-
 
 
 ###Examples
