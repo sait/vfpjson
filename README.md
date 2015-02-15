@@ -1,8 +1,12 @@
-VFPJSON it's a JSON Library in VFP
+#VFPJSON
+it's a JSON Library in VFP
+
 Librería para el manejo de JSON en VFP
 
 Thanks Google for the code in Json Dart
+
 Gracias a Google por el codigo de Json de Dart
+
 http://code.google.com/p/dart/source/browse/trunk/dart/lib/json/json.dart
 
 Warning: Too slow to used with large data
