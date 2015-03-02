@@ -1,6 +1,6 @@
 #VFPJSON
 JSON library for VFP.
-*Warning* Too slow to used with large data
+**WARNING** Too slow to used with large data
 
 
 **json_encode(xExpr)**
