@@ -1,7 +1,5 @@
 #VFPJSON
 JSON library for VFP.
-**WARNING** Too slow to used with large data
-
 
 **Express2Json(eExpr)**
 Returns a string, that is the json of any expression passed.
