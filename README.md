@@ -1,55 +1,48 @@
 #VFPJSON
 JSON library for VFP.
-**WARNING** Too slow to used with large data
 
-
-**json_encode(xExpr)**
-
+**Express2Json(eExpr)**
 Returns a string, that is the json of any expression passed.
 
-**json_decode(cJson)**
 
+**Json2Object(cJson)**
 Returns an object, from the string passed.
 
 **json_getErrorMsg()**
-
 Returns empty if no error found in last decode.
 
-**recordToJson()**
-
+**Record2Json()**
 Returns the json representation for current record.
 
-**tableToJson()**
-
+**Table2Json()**
 Returns the json representation for current table
-Warning need to be changed for large table, because use dimension aInfo[reccount()]
-For large table should change to create the string record by record.
 
+**JsonfromUrl(cUrl)
+Capture properly the JSON of a websever
 
 ###Examples
-```
-set procedure json additive
+*!*	Examples
 
-oPerson = json_decode(' { "name":"Ignacio" , "lastname":"Gutierrez", "age":33 } ')
-if not empty(json_getErrorMsg())
-	? 'Error in decode:'+json_getErrorMsg())
-	return
-endif
-? oPerson.get('name') , oPerson.get('lastname')
-
-obj = oJson.decode('{"jsonrpc":"1.0", "id":1, "method":"sumArray", "params":[3.1415,2.14,10],"version":1.0}')
-? obj.get('jsonrpc'), obj._jsonrpc
-? obj.get('id'), obj._id
-? obj.get('method'), obj._method
-? obj._Params.array[1], obj._Params.get(1)
+*!*	set procedure vfpjson additive
+*!*	oPerson = json_decode(' { "name":"Ignacio" , "lastname":"Gutierrez", "age":33 } ')
+*!*	If Not Empty(json_getErrorMsg())
+*!*		? 'Error in decode:'+json_getErrorMsg())
+*!*		Return
+*!*	Endif
+*!*	? oPerson.Get('name') , oPerson.Get('lastname')
 
 
-cJson = ' {"server":"imap.gmail.com", "user":"billgates", "password":"melinda" , "port":895, "auth":false, "ssl":false, "timeout":20, "error":404}' 
-? cJson
-oSmtp = json_decode(cJson)
-cJson =  json_encode(oSmtp)
+*!*	oCustomer = json_decode( ' { "name":"Ignacio" , "lastname":"Gutierrez", "age":33 } ')
+*!*	? _Json.encode(oCustomer)
+*!*	? oCustomer.Get('name')
+*!*	? oCustomer.Get('lastname')
+*!*	? oCustomer._age
+*!*	? oCustomer  &&"(Object)"
 
 
-? json_encode(_screen)
+*!*	cstring = _Json.JsonfromUrl("http://api.geonames.org/citiesJSON?north=44.1&south=-9.9&east=-22.4&west=55.2&lang=de&username=demo")
+*!*	obj= _json.json2object(cstring)
+*!*	?obj._geonames.array[1]._name
+*!*	?obj._geonames.array[2]._name
+*!*	?obj._geonames.array[3]._name
 
-```
