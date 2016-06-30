@@ -2,11 +2,11 @@
 * vfpjson
 *
 * ---------------------------------- 
-* Ignacio GutiÈrrez Torrero
+* Ignacio Guti√©rrez Torrero
 * SAIT Software Administrativo
 * www.sait.com.mx
 * +52(653)534-8800
-* Monterrey MÈxico
+* Monterrey M√©xico
 * -----------------------------------
 *
 * JSON Library in VFP
@@ -67,6 +67,7 @@ function json_encode(xExpr)
 		public _json
 		_json = newobject('json')
 	endif
+	_json.setError("")
 return _json.encode(@xExpr)
 
 
@@ -514,7 +515,7 @@ define class json as custom
 	return substr(this.cJson, this.nPos, 1)
 	
 	function setError(cMsg)
-		this.cError= 'ERROR parsing JSON at Position:'+allt(str(this.nPos,6,0))+' '+cMsg
+		this.cError= IIF(EMPTY(cMsg), '', 'ERROR parsing JSON at Position:'+allt(str(this.nPos,6,0))+' '+cMsg)
 	return 
 	
 	function getError()
@@ -522,18 +523,18 @@ define class json as custom
 
 
 	function fixUnicode(cStr)
-		cStr = StrTran(cStr,'\u00e1','·')
-		cStr = StrTran(cStr,'\u00e9','È')
-		cStr = StrTran(cStr,'\u00ed','Ì')
-		cStr = StrTran(cStr,'\u00f3','Û')
-		cStr = StrTran(cStr,'\u00fa','˙')
-		cStr = StrTran(cStr,'\u00c1','¡')
-		cStr = StrTran(cStr,'\u00c9','…')
-		cStr = StrTran(cStr,'\u00cd','Õ')
-		cStr = StrTran(cStr,'\u00d3','”')
-		cStr = StrTran(cStr,'\u00da','⁄')
-		cStr = StrTran(cStr,'\u00f1','Ò')
-		cStr = StrTran(cStr,'\u00d1','—')
+		cStr = StrTran(cStr,'\u00e1','√°')
+		cStr = StrTran(cStr,'\u00e9','√©')
+		cStr = StrTran(cStr,'\u00ed','√≠')
+		cStr = StrTran(cStr,'\u00f3','√≥')
+		cStr = StrTran(cStr,'\u00fa','√∫')
+		cStr = StrTran(cStr,'\u00c1','√Å')
+		cStr = StrTran(cStr,'\u00c9','√â')
+		cStr = StrTran(cStr,'\u00cd','√ç')
+		cStr = StrTran(cStr,'\u00d3','√ì')
+		cStr = StrTran(cStr,'\u00da','√ö')
+		cStr = StrTran(cStr,'\u00f1','√±')
+		cStr = StrTran(cStr,'\u00d1','√ë')
 	return cStr
 
 
